@@ -26,7 +26,7 @@ class Viewer{
 
 
     private static
-      $page = Viewer::TEST_LIST,
+      $page = Viewer::LOGIN,
       $messages = Array();
 
     public static function setPage($page){

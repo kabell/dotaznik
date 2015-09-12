@@ -1,9 +1,5 @@
 <?php include 'common/header.html'; ?>
-<body>
 
-  <div class="container">
-    <h2>Dotazník pre meranie sociálnej klímy výučby predmetu v triede</h2>
-    <div class="row text-right">Prihlásený ako žiak/žiačka triedy <?php echo Auth::$userData["trieda"]["name"]; ?></div>
     <div class="row">
       Predmet: <?php echo Test::$testData['nazov']; ?><br/>
       Ucitel: <?php echo Test::$testData['meno']; ?><br/>
@@ -13,13 +9,16 @@
         foreach(Test::$tasks as $task){
         ?>
         <div class="form-group">
-          <label class="control-label col-sm-7"><?php echo $task['task']; ?></label>
+        <div class="row">
+            <label class="col-sm-2 text-right"><?php echo $task['id']; ?></label>
+          <label class="col-sm-5"><?php echo $task['task']; ?></label>
           <div class="col-sm-5">
 
           <label><input type="radio" value='1' name="task<?php echo $task['id']; ?>">Áno</label>
           <label><input type="radio" value='2' name="task<?php echo $task['id']; ?>">Nie</label>
           <label><input type="radio" value='3' name="task<?php echo $task['id']; ?>">Neviem</label>
           </div>
+      </div>
       </div>
 
         <?php
@@ -32,6 +31,5 @@
     <div class='row'>
       <?php echo Utils::getLog(); ?>
     </div>
-  </div>
-</body>
+
 <?php include 'common/footer.html'; ?>
