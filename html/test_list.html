@@ -1,0 +1,22 @@
+<?php include 'common/header.html'; ?>
+
+    <div class="row">
+
+        <?php
+          foreach(TestList::$allTests as $test){
+          echo "<div>";
+          echo "<div class='col-sm-1'>".$test['nazov']."</div>";
+          echo "<div class='col-sm-2'>".$test['meno']."</div>";
+          if(!$test['answered'])
+            echo "<div class='col-sm-9'><a href=\"?page=test&testid=".$test['testid']."\">Vyplň</a></div>";
+          else
+            echo "<div class='col-sm-9'>Už zodpovedane</div>";
+
+          echo "</div>";
+          }
+        ?>
+
+    </div>
+
+
+<?php include 'common/footer.html'; ?>

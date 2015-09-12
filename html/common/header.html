@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class='text-center'>
+            <h2>Dotazník pre meranie sociálnej klímy výučby predmetu v triede</h2>
+        </div>
+        <?php if(Auth::isAuth()){ ?>
+            <div class="row text-right">Prihlásený ako žiak/žiačka triedy <b><?php echo Auth::$userData["trieda"]["name"]; ?></b> <a href="?page=login&mode=logout">Odhlásiť sa</a></div>
+            <?php
+        } ?>
+        <?php
+        foreach( Viewer::messages() as $message){
+            if($message['type']==Viewer::OK)
+            echo "<div class=\"alert alert-success\">".$message['text']."</div>";
+            else if($message['type']==Viewer::INFO)
+            echo "<div class=\"alert alert-info\">".$message['text']."</div>";
+            else if($message['type']==Viewer::WARNING)
+            echo "<div class=\"alert alert-warning\">".$message['text']."</div>";
+            else
+            echo "<div class=\"alert alert-danger\">".$message['text']."</div>";
+
+
+
+        }
+        ?>
