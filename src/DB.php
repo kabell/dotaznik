@@ -22,9 +22,10 @@ class DB {
 
     public static function query($sql){
         Utils::log($sql);
+        //echo $sql."\n";
         $res =  self::$db->query($sql);
         if($res == FALSE){
-            Utils::log("Error");
+            Utils::log("DB ERROR");
             Viewer::addMessage("Nastala chyba pri komunikácii s databázou, prosím kontaktuj administrátora !",Viewer::ERROR);
         }
         return $res;

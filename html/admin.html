@@ -1,0 +1,75 @@
+<?php include 'common/header.html'; ?>
+    <h3>Triedy</h3>
+    <form method='post' action='?page=admin&mode=addclass'>
+        <label>Pridaj triedu</label><input type='text' name='classname'/>
+        <input type='submit' class='btn btn-info' value='Vytvor triedu'/>
+    </form>
+
+        <?php
+            //print_r(Admin::$triedy);
+            $collapseid=1;
+            foreach(Admin::$triedy as $trieda=>$data){
+                echo "<div class='row'><div  class='btn btn-primary' data-toggle=\"collapse\" data-target=\"#col".$collapseid."\">".$data['name']."</div></div>\n";
+                echo "<div class=\"collapse\" id=\"col".$collapseid."\" >\n";
+                    echo "<hr>\n";
+                    echo "<h3>Možnosti triedy:</h3><br/>";
+                    echo "<div class='row'>
+                        <div class='col-sm-3'>
+                            <label> Zmazať triedu:</label>
+                        </div>
+                        <div class='col-sm-7 text-right'>
+                            <a style='width: 150px !important;' href='?page=admin&mode=delclass&id=".$data['id']."' class='btn btn-info' onClick=\"return confirm('Naozaj chces zmazať túto triedu ?');\">Zmazať triedu</a>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <form action='?page=admin&mode=addpredmet&id=".$data['id']."' method='post'>
+                        <div class='col-sm-2'>
+                            <label>Pridať predmet: </label>
+                        </div>
+                    <div class='col-sm-3'>
+                    ";
+                    echo "<select name='predmetid'>\n";
+                        foreach(Admin::$predmety as $predmet){
+                            echo "<option value='".$predmet['predmetid']."'>".$predmet['nazov']."</option>\n";
+                        }
+                    echo "</select>\n
+                </div>
+                <div class='col-sm-3'>";
+                    echo "<select name='ucitel'>\n";
+                        foreach(Admin::$ucitelia as $ucitel){
+                            echo "<option value='".$ucitel['ucitelid']."'>".$ucitel['meno']."</option>\n";
+                        }
+                    echo "</select>
+                </div>
+                <div class='col-sm-2 text-right'>
+                    <input type='submit' style='width: 150px !important;' class='btn btn-info' value='Pridať predmet'/>
+                </div>
+            </form>
+            </div>
+            <div class='row'>
+                <div class='col-sm-2'>
+                    <label>Predmety: </label>
+                </div>
+            </div>";
+
+
+                    foreach(Admin::$triedy_predmety[$data['name']] as $predmet){
+                        echo "<div class=\"row\">\n";
+                        echo "<div class='col-sm-5 text-right'>".$predmet['nazov']." <b>".$predmet['meno']."</b></div>\n";
+                        echo "<a href=\"?page=admin&mode=delpredmet&id=".$predmet['testid']."\" class='btn btn-danger' onclick=\"return confirm('Naozaj chceš zmazať tento predmet ?');\">Zmazat</a>\n";
+                        echo "</div>\n";
+
+                    }
+                    $collapseid++;
+
+                    echo "<hr>\n";
+
+                echo "</div>";
+            }
+        ?>
+
+
+
+
+
+<?php include 'common/footer.html'; ?>

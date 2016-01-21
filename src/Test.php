@@ -14,7 +14,7 @@ class Test{
 
         //overi spravnost testu
         if(!self::over()){
-            Viewer::addMessage("Prepáč, na tento test nemáš oprávnenie !",Viewer::ERROR);
+        //    Viewer::addMessage("Prepáč, na tento test nemáš oprávnenie !",Viewer::ERROR);
             return;
         }
 
@@ -25,7 +25,7 @@ class Test{
     public static function submit(){
         //overi spravnost testu
         if(!self::over()){
-            Viewer::addMessage("Prepáč, na tento test nemáš oprávnenie !",Viewer::ERROR);
+    //        Viewer::addMessage("Prepáč, na tento test nemáš oprávnenie !",Viewer::ERROR);
             return ;
         }
 
@@ -56,7 +56,7 @@ class Test{
         }
 
         //DB::query("insert into stats (testid, value, time) values ('".$testid."','".$sucet."','".time()."')");
-        DB::query("insert into `answered` (testid,userid,score,time) values ('".$testid."','".Auth::$userData['id']['id']."','".$sucet."','".time()."') ");
+        DB::query("insert into `answered` (testid,userid,groupid,score,time) values ('".$testid."','".Auth::$userData['id']['id']."','".self::$testData['groupid']."','".$sucet."','".time()."') ");
         TestList::init();
         Viewer::setPage(Viewer::TEST_LIST);
 
@@ -78,20 +78,14 @@ class Test{
         }
 
         //overim ci exituje taky test pre mna
-        $query = DB::query('SELECT * from `ucitelia` LEFT JOIN `tests`ON ucitelia.ucitelid=tests.ucitel WHERE `testid`='.$testid);
+        $query = DB::query('SELECT * from `ucitelia`
+             LEFT JOIN `tests` ON ucitelia.ucitelid=tests.ucitel
+             LEFT JOIN `predmety` ON predmety.predmetid=tests.predmetid
+         WHERE `trieda`='.Auth::$userData['trieda']['id']." AND `testid`=".$testid);
         //ak nie
         if($query->num_rows==0){
             //idem s5 na zoznam testov
-            Viewer::addMessage("Takýto dotazník neexistuje!",Viewer::ERROR);
-            TestList::init();
-            Viewer::setPage(Viewer::TEST_LIST);
-            return False;
-        }
-
-        //overim ci tento test neije vyplneny
-        $queryans = DB::query('SELECT * from `answered` WHERE `testid`='.$testid." AND `userid`=".Auth::$userData['id']['id']);
-        if($queryans->num_rows != 0){
-            Viewer::addMessage("Tento dotazník si už vyplnil/a!",Viewer::ERROR);
+            Viewer::addMessage("Takýto dotazník neexistuje alebo naň nemáš právo!",Viewer::ERROR);
             TestList::init();
             Viewer::setPage(Viewer::TEST_LIST);
             return False;
@@ -99,6 +93,25 @@ class Test{
 
         //ulozim si udaje o teste
         self::$testData = $query->fetch_array();
+
+        //zistim si groupid testu
+        Utils::log(print_r(self::$testData,true));
+        $groupid = self::$testData['groupid'];
+
+
+        //overim ci tento test neije vyplneny
+        //ak grupy
+        //$queryans = DB::query('SELECT * from `answered` WHERE `groupid`='.$groupid." AND `userid`=".Auth::$userData['id']['id']);
+        $queryans = DB::query('SELECT * from `answered` WHERE `testid`='.$testid." AND `userid`=".Auth::$userData['id']['id']);
+
+        if($queryans->num_rows != 0){
+            Viewer::addMessage("Tento dotazník si už vyplnil/a!",Viewer::ERROR);
+            TestList::init();
+            Viewer::setPage(Viewer::TEST_LIST);
+            return False;
+        }
+
+
         return True;
 
     }

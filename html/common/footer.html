@@ -1,7 +1,14 @@
-
-<div class='row'>
+    <br/>
+    <br/>
+    <br/>
+    <div class='row'>
     <?php if(DOT::$debug == True)echo Utils::getLog(); ?>
     </div>
+    <?php if(DOT::$debug == True):?>
+    <div class='row text-center'>
+        Stránka bola vygenerovana za <?php echo intval(($endTime-$startTime)*10000)/10.0; ?> ms.
+    </div>
+<?php endif; ?>
 </div>
 </body>
 

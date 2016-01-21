@@ -1,0 +1,51 @@
+<?php include 'common/header.html'; ?>
+
+    <h1>Štatistiky dotazkíku</h1>
+    <h5>(všetky hodnotenia sú udávané v % - 120 bodov = 100%, výsledok je aritmetický priemer zo všetkých hodnotení)<h5>
+
+    <?php
+
+    echo Stats::chart("Učitelia spolu",Stats::$ucitelia_spolu,90);
+    $idcol=1;
+    foreach(Stats::$ucitelia_triedy as $ucitel=>$triedy){
+        echo "<div><button class=\"btn btn-info\" data-toggle=\"collapse\" data-target=\"#col".$idcol."\">".$ucitel."</button>";
+        echo "<div id=\"col".$idcol."\" class=\"collapse \">";
+
+
+        echo Stats::chart($ucitel,$triedy);
+        echo "</div>
+    </div>";
+        $idcol++;
+    }
+
+    echo Stats::chart("Triedy spolu",Stats::$triedy_spolu,80);
+    foreach(Stats::$triedy_ucitelia as $trieda=>$ucitelia){
+        echo "<div><button type=\"button\" class=\"btn btn-info\" data-toggle=\"collapse\" data-target=\"#col".$idcol."\">".$trieda."</button>";
+        echo "<div id=\"col".$idcol."\" class=\"collapse \">";
+
+
+        echo Stats::chart($trieda,$ucitelia);
+        echo "</div>
+    </div>";
+        $idcol++;
+    }
+
+
+    /*
+     foreach(Stats::$triedy as $ucitel=>$data){
+         //echo $ucitel."\n";
+         //print_r($data);
+         echo Stats::chart($ucitel,$data);
+     }
+     */
+     ?>
+
+
+
+
+
+
+
+
+
+<?php include 'common/footer.html'; ?>

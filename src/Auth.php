@@ -3,7 +3,7 @@
 class Auth{
 
     const
-    ADMIN = '1',
+    ADMIN = 1,
     BLOCK = '1',
     ATTEMPTS = 'attempts',
     MAX_ATTEMPTS = 10,
@@ -27,7 +27,6 @@ class Auth{
 
     private static
 
-    $isAdmin = False,
     $isAuthentificated = False,
     $personalData = Array(),
     $loginStatus = Auth::UNDEFINED;
@@ -46,6 +45,7 @@ class Auth{
     public static function login( $password ){
 
         if(self::isAuth()){
+            Viewer::addMessage('Pre prihlásenie sa musíš najskôr odhlásiť !',Viewer::INFO);
             Viewer::setPage(Viewer::TEST_LIST);
             return true;
         }
@@ -55,6 +55,7 @@ class Auth{
 
 
         $row = DB::query("SELECT * FROM `login` WHERE `password`='".$password."'");
+        //Utils::log($row);
 
         //ak prihlásenie prebehlo úspešne
         if($row->num_rows == 1){
@@ -74,7 +75,6 @@ class Auth{
             Viewer::addMessage('Prihlásenie prebehlo úspešne !',Viewer::OK);
             self::$loginStatus = Auth::LOGIN_OK;
             //nastavíme udaje
-            Utils::log(print_r($data,true));
             self::$userData['id'] = Array("id"=>$data["id"],"password"=>$password);
             self::$userData['trieda'] = DB::query("SELECT * FROM `triedy` WHERE `id`=".$data['trieda'])->fetch_array();
             if($data['admin']==Auth::ADMIN)
@@ -89,7 +89,7 @@ class Auth{
         }
         //ak je zle heslo
         else{
-            Viewer::addMessage('Zadal si zlé heslo !',Viewer::ERROR);
+            Viewer::addMessage('Zadal/a si zlé heslo !',Viewer::ERROR);
 
             $_SESSION[Auth::LAST_LOGIN]=time();
             self::$loginStatus = Auth::WRONG_PASSWORD;
@@ -100,13 +100,13 @@ class Auth{
     }
 
     public static function isAuth(){
-        Utils::log("autentifikacia je ". self::$loginStatus==Auth::LOGIN_OK);
-
         return self::$loginStatus==Auth::LOGIN_OK;
     }
 
     public static function isAdmin(){
-        return self::$isAdmin;
+        if(!isset(self::$userData['admin']))
+            return 0;
+        return self::$userData['admin'];
     }
 
     public static function getPersonalData(){

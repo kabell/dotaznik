@@ -2,9 +2,13 @@
 <div class='text-center'>
 <h3>Pre vstup do systému sa musíš prihlásiť svojim heslom</h3>
 
-<form method="post" action="?page=test_list&mode=login">
-  <input type='password' name='password'>
-  <input type='submit' value="Login">
+<form class="form-group" method="post" action="?page=test_list&mode=login">
+  <div class="input-group col-md-4 col-md-offset-4">
+    <input class="form-control text-center" type='password' name='password'>
+    <span class="input-group-btn">
+      <input class="btn btn-primary" type='submit' value="Prihlásiť">
+    </span>
+  </div>
 </form>
 </div>
 <?php include 'common/footer.html'; ?>

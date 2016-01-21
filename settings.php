@@ -6,8 +6,8 @@ class Settings {
   $dbHost = 'localhost',
   $dbUser = 'root',
   $dbPassword = 'lama',
-  $dbDatabase = 'dotaznik';
-
+  $dbDatabase = 'dotaznik',
+  $logFile = 'log.log';
 }
 
 ?>

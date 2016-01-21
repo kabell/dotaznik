@@ -1,0 +1,735 @@
+Array<br/>
+Array<br/>
+1<br/>
+1<br/>
+Array<br/>
+(<br/>
+)<br/>
+<br/>
+Array<br/>
+(<br/>
+)<br/>
+<br/>
+Array<br/>
+(<br/>
+)<br/>
+<br/>
+Array<br/>
+(<br/>
+)<br/>
+<br/>
+Array
+(
+)
+
+Array
+(
+)
+
+Array
+(
+    [page] => test_list
+    [mode] => login
+)
+
+Array
+(
+    [password] => kabell
+)
+
+SELECT * FROM `login` WHERE `password`='kabell'
+mysqli_result Object
+(
+    [current_field] => 0
+    [field_count] => 5
+    [lengths] => 
+    [num_rows] => 1
+    [type] => 0
+)
+
+SELECT * FROM `triedy` WHERE `id`=0
+SELECT * from `ucitelia`
+             LEFT JOIN `tests` ON ucitelia.ucitelid=tests.ucitel
+             LEFT JOIN `predmety` ON predmety.predmetid=tests.predmetid
+         WHERE `trieda`=0
+SELECT * from `answered` where `userid`=5
+Array
+(
+    [page] => login
+    [mode] => logout
+)
+
+Array
+(
+)
+
+Array
+(
+    [page] => test_list
+    [mode] => login
+)
+
+Array
+(
+    [password] => kabell
+)
+
+SELECT * FROM `login` WHERE `password`='kabell'
+mysqli_result Object
+(
+    [current_field] => 0
+    [field_count] => 5
+    [lengths] => 
+    [num_rows] => 1
+    [type] => 0
+)
+
+SELECT * FROM `triedy` WHERE `id`=0
+SELECT * from `ucitelia`
+             LEFT JOIN `tests` ON ucitelia.ucitelid=tests.ucitel
+             LEFT JOIN `predmety` ON predmety.predmetid=tests.predmetid
+         WHERE `trieda`=0
+SELECT * from `answered` where `userid`=5
+Array
+(
+    [page] => test_list
+    [mode] => login
+)
+
+Array
+(
+    [password] => kabell
+)
+
+SELECT * from `ucitelia`
+             LEFT JOIN `tests` ON ucitelia.ucitelid=tests.ucitel
+             LEFT JOIN `predmety` ON predmety.predmetid=tests.predmetid
+         WHERE `trieda`=0
+SELECT * from `answered` where `userid`=5
+Array
+(
+    [page] => test_list
+)
+
+Array
+(
+)
+
+SELECT * from `ucitelia`
+             LEFT JOIN `tests` ON ucitelia.ucitelid=tests.ucitel
+             LEFT JOIN `predmety` ON predmety.predmetid=tests.predmetid
+         WHERE `trieda`=0
+SELECT * from `answered` where `userid`=5
+15:11:46 11.17.2015 Array
+(
+    [page] => login
+    [mode] => logout
+)
+
+15:11:46 11.17.2015 Array
+(
+)
+
+15:11:49 11.17.2015 Array
+(
+    [page] => test_list
+    [mode] => login
+)
+
+15:11:49 11.17.2015 Array
+(
+    [password] => 123456
+)
+
+15:11:49 11.17.2015 SELECT * FROM `login` WHERE `password`='123456'
+15:11:49 11.17.2015 mysqli_result Object
+(
+    [current_field] => 0
+    [field_count] => 5
+    [lengths] => 
+    [num_rows] => 1
+    [type] => 0
+)
+
+15:11:49 11.17.2015 SELECT * FROM `triedy` WHERE `id`=1
+15:11:49 11.17.2015 SELECT * from `ucitelia`
+             LEFT JOIN `tests` ON ucitelia.ucitelid=tests.ucitel
+             LEFT JOIN `predmety` ON predmety.predmetid=tests.predmetid
+         WHERE `trieda`=1
+15:11:49 11.17.2015 SELECT * from `answered` where `userid`=1
+15:11:53 11.17.2015 Array
+(
+    [page] => login
+    [mode] => logout
+)
+
+15:11:53 11.17.2015 Array
+(
+)
+
+2015.11.17-15:11:07 Array
+(
+    [page] => login
+    [mode] => logout
+)
+
+2015.11.17-15:11:07 Array
+(
+)
+
+2015-11-17 15:11:42 Array
+(
+    [page] => login
+    [mode] => logout
+)
+
+2015-11-17 15:11:42 Array
+(
+)
+
+2015-11-17 15:11:59 Array
+(
+    [page] => test_list
+    [mode] => login
+)
+
+2015-11-17 15:11:59 Array
+(
+    [password] => 123456
+)
+
+2015-11-17 15:11:59 SELECT * FROM `login` WHERE `password`='123456'
+2015-11-17 15:11:59 mysqli_result Object
+(
+    [current_field] => 0
+    [field_count] => 5
+    [lengths] => 
+    [num_rows] => 1
+    [type] => 0
+)
+
+2015-11-17 15:11:59 SELECT * FROM `triedy` WHERE `id`=1
+2015-11-17 15:11:59 SELECT * from `ucitelia`
+             LEFT JOIN `tests` ON ucitelia.ucitelid=tests.ucitel
+             LEFT JOIN `predmety` ON predmety.predmetid=tests.predmetid
+         WHERE `trieda`=1
+2015-11-17 15:11:59 SELECT * from `answered` where `userid`=1
+2015-11-17 15:11:30 Array
+(
+    [page] => login
+    [mode] => logout
+)
+
+2015-11-17 15:11:30 Array
+(
+)
+
+2015-11-17 18:11:52 Array
+(
+)
+
+2015-11-17 18:11:52 Array
+(
+)
+
+2015-11-17 18:11:57 Array
+(
+    [page] => test_list
+    [mode] => login
+)
+
+2015-11-17 18:11:57 Array
+(
+    [password] => 12345
+)
+
+2015-11-17 18:11:57 SELECT * FROM `login` WHERE `password`='12345'
+2015-11-17 18:11:01 Array
+(
+    [page] => test_list
+    [mode] => login
+)
+
+2015-11-17 18:11:01 Array
+(
+    [password] => 123456
+)
+
+2015-11-17 18:11:01 SELECT * FROM `login` WHERE `password`='123456'
+2015-11-17 18:11:01 SELECT * FROM `triedy` WHERE `id`=1
+2015-11-17 18:11:01 SELECT * from `ucitelia`
+             LEFT JOIN `tests` ON ucitelia.ucitelid=tests.ucitel
+             LEFT JOIN `predmety` ON predmety.predmetid=tests.predmetid
+         WHERE `trieda`=1
+2015-11-17 18:11:01 SELECT * from `answered` where `userid`=1
+2015-11-17 18:11:15 Array
+(
+    [page] => login
+    [mode] => logout
+)
+
+2015-11-17 18:11:15 Array
+(
+)
+
+2015-11-17 18:11:19 Array
+(
+    [page] => test_list
+    [mode] => login
+)
+
+2015-11-17 18:11:19 Array
+(
+    [password] => kabell
+)
+
+2015-11-17 18:11:19 SELECT * FROM `login` WHERE `password`='kabell'
+2015-11-17 18:11:19 SELECT * FROM `triedy` WHERE `id`=0
+2015-11-17 18:11:19 SELECT * from `ucitelia`
+             LEFT JOIN `tests` ON ucitelia.ucitelid=tests.ucitel
+             LEFT JOIN `predmety` ON predmety.predmetid=tests.predmetid
+         WHERE `trieda`=0
+2015-11-17 18:11:19 SELECT * from `answered` where `userid`=5
+2015-11-18 23:11:25 Array
+(
+)
+
+2015-11-18 23:11:25 Array
+(
+)
+
+2015-11-19 09:11:52 Array
+(
+)
+
+2015-11-19 09:11:52 Array
+(
+)
+
+2015-11-19 19:11:18 Array
+(
+)
+
+2015-11-19 19:11:18 Array
+(
+)
+
+2015-11-20 09:11:37 Array
+(
+)
+
+2015-11-20 09:11:37 Array
+(
+)
+
+2015-11-20 09:11:29 Array
+(
+)
+
+2015-11-20 09:11:29 Array
+(
+)
+
+2015-11-20 09:11:35 Array
+(
+)
+
+2015-11-20 09:11:35 Array
+(
+)
+
+2015-11-21 10:11:19 Array
+(
+)
+
+2015-11-21 10:11:19 Array
+(
+)
+
+2015-11-21 18:11:51 Array
+(
+)
+
+2015-11-21 18:11:51 Array
+(
+)
+
+2015-11-23 00:11:15 Array
+(
+)
+
+2015-11-23 00:11:15 Array
+(
+)
+
+2015-11-24 22:11:50 Array
+(
+)
+
+2015-11-24 22:11:50 Array
+(
+)
+
+2015-11-25 17:11:22 Array
+(
+)
+
+2015-11-25 17:11:22 Array
+(
+)
+
+2015-11-25 18:11:57 Array
+(
+)
+
+2015-11-25 18:11:57 Array
+(
+)
+
+2015-11-25 18:11:28 Array
+(
+    [page] => test_list
+    [mode] => login
+)
+
+2015-11-25 18:11:28 Array
+(
+    [password] => 123456
+)
+
+2015-11-25 18:11:28 SELECT * FROM `login` WHERE `password`='123456'
+2015-11-25 18:11:28 SELECT * FROM `triedy` WHERE `id`=1
+2015-11-25 18:11:28 SELECT * from `ucitelia`
+             LEFT JOIN `tests` ON ucitelia.ucitelid=tests.ucitel
+             LEFT JOIN `predmety` ON predmety.predmetid=tests.predmetid
+         WHERE `trieda`=1
+2015-11-25 18:11:28 SELECT * from `answered` where `userid`=1
+2015-11-26 19:11:51 Array
+(
+)
+
+2015-11-26 19:11:51 Array
+(
+)
+
+2015-11-26 20:11:46 Array
+(
+)
+
+2015-11-26 20:11:46 Array
+(
+)
+
+2015-11-30 10:11:47 Array
+(
+)
+
+2015-11-30 10:11:47 Array
+(
+)
+
+2015-11-30 18:11:34 Array
+(
+)
+
+2015-11-30 18:11:34 Array
+(
+)
+
+2015-12-01 23:12:42 Array
+(
+)
+
+2015-12-01 23:12:42 Array
+(
+)
+
+2015-12-03 20:12:44 Array
+(
+)
+
+2015-12-03 20:12:44 Array
+(
+)
+
+2015-12-04 19:12:58 Array
+(
+)
+
+2015-12-04 19:12:58 Array
+(
+)
+
+2015-12-05 12:12:14 Array
+(
+)
+
+2015-12-05 12:12:14 Array
+(
+)
+
+2015-12-06 00:12:45 Array
+(
+)
+
+2015-12-06 00:12:45 Array
+(
+)
+
+2015-12-06 12:12:22 Array
+(
+)
+
+2015-12-06 12:12:22 Array
+(
+)
+
+2015-12-08 20:12:34 Array
+(
+)
+
+2015-12-08 20:12:34 Array
+(
+)
+
+2015-12-09 12:12:17 Array
+(
+)
+
+2015-12-09 12:12:17 Array
+(
+)
+
+2015-12-09 13:12:33 Array
+(
+)
+
+2015-12-09 13:12:33 Array
+(
+)
+
+2015-12-10 19:12:35 Array
+(
+)
+
+2015-12-10 19:12:35 Array
+(
+)
+
+2015-12-12 16:12:02 Array
+(
+)
+
+2015-12-12 16:12:02 Array
+(
+)
+
+2015-12-12 17:12:39 Array
+(
+)
+
+2015-12-12 17:12:39 Array
+(
+)
+
+2015-12-13 19:12:24 Array
+(
+    [PHPSESSID] => aab45f4f00143PVTJTS@Y@G[JET
+)
+
+2015-12-13 19:12:24 Array
+(
+)
+
+2015-12-13 21:12:31 Array
+(
+)
+
+2015-12-13 21:12:31 Array
+(
+)
+
+2015-12-15 19:12:26 Array
+(
+)
+
+2015-12-15 19:12:26 Array
+(
+)
+
+2015-12-16 00:12:17 Array
+(
+)
+
+2015-12-16 00:12:17 Array
+(
+)
+
+2015-12-16 14:12:37 Array
+(
+)
+
+2015-12-16 14:12:37 Array
+(
+)
+
+2015-12-16 15:12:39 Array
+(
+)
+
+2015-12-16 15:12:39 Array
+(
+)
+
+2015-12-18 17:12:56 Array
+(
+)
+
+2015-12-18 17:12:56 Array
+(
+)
+
+2015-12-18 21:12:15 Array
+(
+)
+
+2015-12-18 21:12:15 Array
+(
+)
+
+2015-12-18 23:12:06 Array
+(
+)
+
+2015-12-18 23:12:06 Array
+(
+)
+
+2015-12-19 15:12:28 Array
+(
+)
+
+2015-12-19 15:12:28 Array
+(
+)
+
+2015-12-20 20:12:54 Array
+(
+)
+
+2015-12-20 20:12:54 Array
+(
+)
+
+2015-12-22 09:12:40 Array
+(
+)
+
+2015-12-22 09:12:40 Array
+(
+)
+
+2015-12-22 12:12:50 Array
+(
+)
+
+2015-12-22 12:12:50 Array
+(
+)
+
+2016-01-06 20:01:43 Array
+(
+)
+
+2016-01-06 20:01:43 Array
+(
+)
+
+2016-01-06 21:01:18 Array
+(
+)
+
+2016-01-06 21:01:18 Array
+(
+)
+
+2016-01-07 10:01:04 Array
+(
+)
+
+2016-01-07 10:01:04 Array
+(
+)
+
+2016-01-07 10:01:04 Array
+(
+)
+
+2016-01-07 10:01:04 Array
+(
+)
+
+2016-01-07 23:01:58 Array
+(
+)
+
+2016-01-07 23:01:58 Array
+(
+)
+
+2016-01-10 12:01:42 Array
+(
+)
+
+2016-01-10 12:01:42 Array
+(
+)
+
+2016-01-10 15:01:13 Array
+(
+)
+
+2016-01-10 15:01:13 Array
+(
+)
+
+2016-01-10 17:01:16 Array
+(
+)
+
+2016-01-10 17:01:16 Array
+(
+)
+
+2016-01-10 19:01:52 Array
+(
+)
+
+2016-01-10 19:01:52 Array
+(
+)
+
+2016-01-11 22:01:54 Array
+(
+)
+
+2016-01-11 22:01:54 Array
+(
+)
+
+2016-01-13 12:01:41 Array
+(
+)
+
+2016-01-13 12:01:41 Array
+(
+)
+
+2016-01-14 08:01:48 Array
+(
+)
+
+2016-01-14 08:01:48 Array
+(
+)
+

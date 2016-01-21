@@ -1,18 +1,18 @@
 <?php include 'common/header.html'; ?>
-
+<?php include 'text.html'; ?>
     <div class="row">
 
         <?php
           foreach(TestList::$allTests as $test){
-          echo "<div>";
-          echo "<div class='col-sm-1'>".$test['nazov']."</div>";
-          echo "<div class='col-sm-2'>".$test['meno']."</div>";
+          echo "<div class=\"row\">\n";
+          echo "<div class='col-sm-3 text-right'>".$test['nazov']."</div>\n";
+          echo "<div class='col-sm-3'>".$test['meno']."</div>\n";
           if(!$test['answered'])
-            echo "<div class='col-sm-9'><a href=\"?page=test&testid=".$test['testid']."\">Vyplň</a></div>";
+            echo "<div class='col-sm-3'><a style='width: 100px !important;' class=\"btn btn-success\"href=\"?page=test&testid=".$test['testid']."\">Vyplň</a></div>\n";
           else
-            echo "<div class='col-sm-9'>Už zodpovedane</div>";
+            echo "<div class='col-sm-3'><a style='width: 100px !important;' class=\"btn btn-danger disabled\">Vyplnené</a></div>\n";
 
-          echo "</div>";
+          echo "</div>\n";
           }
         ?>
 

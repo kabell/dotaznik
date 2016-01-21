@@ -1,35 +1,40 @@
 <?php include 'common/header.html'; ?>
+    <div class="container">
+        <div class="row"><a class="btn btn-primary btn-sm col-md-offset-1" href="?page=test_list">Späť na výber dotazníkov</a></div>
+        <br/>
+        <div class="row"><label class="col-md-2 text-right">Predmet:</label><div class=""> <?php echo Test::$testData['nazov']; ?></div></div>
+        <div class="row"><label class="col-md-2 text-right">Učiteľ:</label><div class=""> <?php echo Test::$testData['meno']; ?></div></div>
+        <div class="row"><label class="col-md-2 text-right">Trieda:</label><div class=""> <?php echo Auth::$userData['trieda']['name']; ?></div></div>
 
     <div class="row">
-      Predmet: <?php echo Test::$testData['nazov']; ?><br/>
-      Ucitel: <?php echo Test::$testData['meno']; ?><br/>
-      Trieda <?php echo Auth::$userData['trieda']['name']; ?><br/>
-      <form class='from-inline' action='?page=test&mode=submit_test&testid=<?php echo Test::$testData['testid']; ?>' method='post'>
+      <br/>
+      <form class='from-group' action='?page=test&mode=submit_test&testid=<?php echo Test::$testData['testid']; ?>' method='post'>
         <?php
         foreach(Test::$tasks as $task){
         ?>
-        <div class="form-group">
+        <div class="container">
         <div class="row">
-            <label class="col-sm-2 text-right"><?php echo $task['id']; ?></label>
+          <label class="col-sm-2 text-right"><?php echo $task['id']; ?></label>
           <label class="col-sm-5"><?php echo $task['task']; ?></label>
           <div class="col-sm-5">
 
-          <label><input type="radio" value='1' name="task<?php echo $task['id']; ?>">Áno</label>
-          <label><input type="radio" value='2' name="task<?php echo $task['id']; ?>">Nie</label>
-          <label><input type="radio" value='3' name="task<?php echo $task['id']; ?>">Neviem</label>
+            <label><input type="radio" value='1' name="task<?php echo $task['id']; ?>">Áno</label>
+            <label><input type="radio" value='2' name="task<?php echo $task['id']; ?>">Nie</label>
+            <label><input type="radio" value='3' name="task<?php echo $task['id']; ?>">Neviem</label>
           </div>
-      </div>
-      </div>
+        </div>
+        </div>
 
         <?php
         }
         ?>
-        <input type="submit" value="odosli">
+        <br/>
+        <div class='text-center'>
+        <input class="btn btn-primary" type="submit" value="Odoslať">
+    </div>
       </form>
 
     </div>
-    <div class='row'>
-      <?php echo Utils::getLog(); ?>
-    </div>
+</div>
 
 <?php include 'common/footer.html'; ?>
